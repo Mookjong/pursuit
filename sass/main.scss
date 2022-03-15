@@ -1,3 +1,7 @@
+$clr-land: rgb(8, 61, 8);
+$clr-red-fire: #fc3c25;
+$clr-taxi: #fdd206;
+
 *{
     margin: 0;
     padding: 0;
@@ -10,12 +14,24 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #ededed;
+    background: $clr-land;
+    
+    p{
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        color: lighten($clr-land, 20%);
+
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+    }
 }
 
 .road{
     position: relative;
-    min-width: 700px;
+    min-width: 900px;
     height: 150px;
     background: #333;
     border-radius: 75px;
@@ -24,6 +40,7 @@ body{
     align-items: center;
     transform-style: preserve-3d;
     perspective: 500px;
+    transform: rotate(-25deg);
 
     &::before{
         content: '';
@@ -38,10 +55,10 @@ body{
     // carrosserie
     .taxi{
         position: absolute;
-        left: 50px;
+        left: 150px;
         width: 200px;
         height: 80px;
-        background: #f4b603;
+        background: darken($clr-taxi,8%);
         border-radius: 10px;
         box-shadow: -10px 10px 0 rgba(0, 0, 0, .25);
         transform-style: preserve-3d;
@@ -51,7 +68,7 @@ body{
 
         &:nth-child(2){
             left: initial;
-            right: 150px;
+            right: 250px;
             animation: animate_taxi 4s linear infinite;
             animation-delay: -1s;
             z-index: 9;
@@ -103,8 +120,8 @@ body{
             width: 5px;
             height: 15px;
             border-radius: 2px;
-            background: #fc3c25;
-            box-shadow: 0 42px #fc3c25;
+            background: $clr-red-fire;
+            box-shadow: 0 42px $clr-red-fire;
         }
 
         // feux avants
@@ -124,7 +141,7 @@ body{
         span{
            position: absolute; 
            inset: 5px 10px;
-           background: #fdd206;
+           background: $clr-taxi;
            border-radius: 10px;
            overflow: hidden;
 
@@ -141,7 +158,7 @@ body{
                     content: '';
                     position: absolute;
                     inset: 6px 25px;
-                    background: #fdd206;
+                    background: $clr-taxi;
                     border-radius: 5px;
                 }
 
@@ -149,7 +166,7 @@ body{
                     content: '';
                     position: absolute;
                     inset: 0 58px;
-                    background: #ffd206;
+                    background: $clr-taxi;
                     border-radius: 5px;
                 }
             }
@@ -165,10 +182,10 @@ body{
                     left: 20px;
                     width: 40px;
                     height: 5px;
-                    background: #fdd206;
+                    background: $clr-taxi;
                     transform-origin: right;
                     transform: rotate(15deg);
-                    box-shadow: 100px 34px #ffd206;
+                    box-shadow: 100px 34px $clr-taxi;
                 }
 
                 &::after{
@@ -178,10 +195,10 @@ body{
                     left: 20px;
                     width: 40px;
                     height: 5px;
-                    background: #fdd206;
+                    background: $clr-taxi;
                     transform-origin: right;
                     transform: rotate(-15deg);
-                    box-shadow: 100px -34px #ffd206;
+                    box-shadow: 100px -34px $clr-taxi;
                 }
             }
 

@@ -10,12 +10,22 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #ededed;
+  background: #083d08;
+}
+body p {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  color: #149714;
+}
+body p a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .road {
   position: relative;
-  min-width: 700px;
+  min-width: 900px;
   height: 150px;
   background: #333;
   border-radius: 75px;
@@ -24,6 +34,7 @@ body {
   align-items: center;
   transform-style: preserve-3d;
   perspective: 500px;
+  transform: rotate(-25deg);
 }
 .road::before {
   content: "";
@@ -36,10 +47,10 @@ body {
 }
 .road .taxi {
   position: absolute;
-  left: 50px;
+  left: 150px;
   width: 200px;
   height: 80px;
-  background: #f4b603;
+  background: #d8b302;
   border-radius: 10px;
   box-shadow: -10px 10px 0 rgba(0, 0, 0, 0.25);
   transform-style: preserve-3d;
@@ -49,7 +60,7 @@ body {
 }
 .road .taxi:nth-child(2) {
   left: initial;
-  right: 150px;
+  right: 250px;
   animation: animate_taxi 4s linear infinite;
   animation-delay: -1s;
   z-index: 9;
@@ -132,7 +143,7 @@ body {
   content: "";
   position: absolute;
   inset: 0 58px;
-  background: #ffd206;
+  background: #fdd206;
   border-radius: 5px;
 }
 .road .taxi span i {
@@ -149,7 +160,7 @@ body {
   background: #fdd206;
   transform-origin: right;
   transform: rotate(15deg);
-  box-shadow: 100px 34px #ffd206;
+  box-shadow: 100px 34px #fdd206;
 }
 .road .taxi span i::after {
   content: "";
@@ -161,7 +172,7 @@ body {
   background: #fdd206;
   transform-origin: right;
   transform: rotate(-15deg);
-  box-shadow: 100px -34px #ffd206;
+  box-shadow: 100px -34px #fdd206;
 }
 .road .taxi span::before {
   content: "Taxi";
